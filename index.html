@@ -9,7 +9,7 @@
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
     <!-- js for clicking into another tab -->
-    <script src="https://rawgit.com/gasolin/aframe-href-component/master/dist/aframe-href-component.min.js"></script>
+    <script src="aframe.js"></script>
     <script src="fades.js"></script>
   </head>
   <body>
@@ -18,10 +18,11 @@
         <img id="cornea" src="cornea.jpg">
         <img id="cornea-thumb" src="eye/cornea.png">
         <img id="sclera-thumb" src="eye/sclera.png">
-        <img id="eye-thumb" src="eye/fib.png">
+        <img id="fib-thumb" src="eye/fib.png">
+        <img id="vas-thumb" src="eye/vas.png">
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
         <img id="sclera" src="sclera.jpg">
-        <img id="eye" src="eye.jpg">
+        <img id="fib" src="eye.jpg">
         <img id="eyeBackground" src="eye.jpg">
         <!-- Image link template to be reused. -->
         <script id="link" type="text/html">
@@ -42,9 +43,10 @@
 
       <!-- Image links. -->
       <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
+        <a-entity template="src: #link" data-src="#fib" data-thumb="#fib-thumb" href="index.html"></a-entity>
         <a-entity template="src: #link" data-src="#sclera" data-thumb="#sclera-thumb"></a-entity>
         <a-entity template="src: #link" data-src="#cornea" data-thumb="#cornea-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#eye" data-thumb="#eye-thumb" href="index.html"></a-entity>
+        <a-entity template="src: #link" data-src="#vas" data-thumb="#vas-thumb" href="vas.html"></a-entity>
       </a-entity>
 
       <!-- Camera + cursor. -->
