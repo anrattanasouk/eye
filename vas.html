@@ -2,27 +2,28 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>360&deg; Image Gallery</title>
-    <meta name="description" content="360&deg; Image Gallery - A-Frame">
+    <title>Vascular Layer</title>
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
-    <script src="fades.js"></script>
+    <!-- js for clicking into another tab -->
     <script src="aframe.js"></script>
+    <script src="fades.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
-        <img id="city" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
-        <img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
-        <img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
-        <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
+        <img id="lens" src="lens.jpg">
+        <img id="lens-thumb" src="eye/lens.png">
+        <img id="iris-thumb" src="eye/iris.png">
+        <img id="inner-thumb" src="eye/inner.png">
+        <img id="vas-thumb" src="eye/vas.png">
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-        <img id="cubes" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
-        <img id="sechelt" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
-
+        <img id="iris" src="iris2.jpg">
+        <img id="inner" src="eye.jpg">
+        <img id="eyeBackground1" src="eye1.jpg">
         <!-- Image link template to be reused. -->
         <script id="link" type="text/html">
           <a-entity class="link"
@@ -38,13 +39,14 @@
       </a-assets>
 
       <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src="#city"></a-sky>
+      <a-sky id="image-360" radius="10" src="#eyeBackground1"></a-sky>
 
       <!-- Image links. -->
       <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
-        <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb" href="click.html"></a-entity>
-        <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#vas" data-thumb="#vas-thumb" href="vas.html"></a-entity>
+        <a-entity template="src: #link" data-src="#iris" data-thumb="#iris-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#lens" data-thumb="#lens-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#inner" data-thumb="#inner-thumb" href="inner.html"></a-entity>
       </a-entity>
 
       <!-- Camera + cursor. -->
