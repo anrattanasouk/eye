@@ -3,27 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>Fibrous Layer</title>
-    <meta name="description" content="360&deg; Image Gallery - A-Frame">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <!-- js for clicking into another tab -->
     <script src="https://rawgit.com/gasolin/aframe-href-component/master/dist/aframe-href-component.min.js"></script>
     <script src="fades.js"></script>
-
   </head>
   <body>
     <a-scene>
       <a-assets>
-        <img id="city" src="eye.jpg">
-        <img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
-        <img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
-        <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
+        <img id="cornea" src="cornea.jpg">
+        <img id="cornea-thumb" src="eye/cornea.png">
+        <img id="sclera-thumb" src="eye/sclera.png">
+        <img id="eye-thumb" src="eye/fib.png">
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-        <img id="cubes" src="sclera.jpg">
-        <img id="sechelt" src="cornea.jpg">
-
+        <img id="sclera" src="sclera.jpg">
+        <img id="eye" src="eye.jpg">
+        <img id="eyeBackground" src="eye.jpg">
         <!-- Image link template to be reused. -->
         <script id="link" type="text/html">
           <a-entity class="link"
@@ -39,13 +38,13 @@
       </a-assets>
 
       <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src="#city"></a-sky>
+      <a-sky id="image-360" radius="10" src="#eyeBackground"></a-sky>
 
       <!-- Image links. -->
       <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
-        <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb" href="index.html" ></a-entity>
-        <a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#sclera" data-thumb="#sclera-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#cornea" data-thumb="#cornea-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#eye" data-thumb="#eye-thumb" href="index.html"></a-entity>
       </a-entity>
 
       <!-- Camera + cursor. -->
